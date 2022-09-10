@@ -6,29 +6,42 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 14:44:14 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/05 12:48:45 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/10 16:13:38 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "ScavTrap.hpp"
+#include "ClapTrap.hpp"
 #include <iostream>
 
 int	main( void )
 {
-	Fixed	a;
-	Fixed	const b( 10 );
-	Fixed	const c( 42.42f );
-	Fixed	const d( b );
+	ClapTrap	usa("USA");
+	ScavTrap	russia("Rossija");
 
-	a = Fixed( 1234.4321f );
+	std::cout << std::endl;
 
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
-	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
-	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
-	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
-	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	russia.beRepaired(usa.getAttackDamage());
+	usa.attack(russia.getName());
+	russia.takeDamage(usa.getAttackDamage());
+	russia.beRepaired(usa.getAttackDamage());
+	russia.beRepaired(100);
+	usa.attack(russia.getName());
+	russia.takeDamage(usa.getAttackDamage());
+
+	russia.attack(usa.getName());
+	usa.takeDamage(russia.getAttackDamage());
+	russia.attack(usa.getName());
+	usa.takeDamage(russia.getAttackDamage());
+	russia.attack(usa.getName());
+	usa.takeDamage(russia.getAttackDamage());
+	russia.attack(usa.getName());
+	usa.takeDamage(russia.getAttackDamage());
+	russia.attack(usa.getName());
+	usa.takeDamage(russia.getAttackDamage());
+	usa.attack(russia.getName());
+
+	russia.guardGate();
+	std::cout << std::endl;
 	return 0;
 }
