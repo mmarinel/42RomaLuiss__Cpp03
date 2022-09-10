@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 14:44:14 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/10 16:13:38 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/10 17:05:00 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main( void )
 	usa.takeDamage(russia.getAttackDamage());
 	usa.attack(russia.getName());
 
+	std::cout << std::endl;
 	russia.guardGate();
 	std::cout << std::endl;
 	return 0;
