@@ -6,7 +6,7 @@
 #    By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/16 17:34:54 by earendil          #+#    #+#              #
-#    Updated: 2022/09/06 12:39:33 by mmarinel         ###   ########.fr        #
+#    Updated: 2022/09/10 19:16:29 by mmarinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,9 @@ BOLDCYAN	:= "\033[1m\033[36m"
 BOLDWHITE	:= "\033[1m\033[37m"
 
 CC:= @clang++
-CFLAGS:= -std=c++98 -Wall -Werror -Wextra
+CFLAGS:= -std=c++98 -Wall -Werror -Wextra -Wshadow
 
-NAME := bsp
+NAME := fragTrap
 OBJS_DIR:= bin
 OBJS:= $(addprefix $(OBJS_DIR)/, $(shell find . -name "*.cpp" -print | sed 's/\.cpp/\.o/g' | sed 's/\.\///'))
 INCLUDES:= $(shell find . -name "*.hpp" -print)
@@ -44,10 +44,7 @@ exercise: .BUILD
 
 run: .RUN
 	@echo $(CYAN) "\nTests running\n" $(RESET)
-	@./$(NAME)
-# @echo $(BOLDYELLOW) "\nChecking For Leaks" $(RESET)
-# @leaks --atExit -- ./$(NAME) 15 gorg
-#@./$(NAME) 150 gorg
+	@leaks --atExit -- ./$(NAME)
 
 all:
 	@$(MAKE_REC) -C ..
