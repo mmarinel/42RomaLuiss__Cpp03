@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 18:59:50 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/10 19:20:57 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 11:38:17 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "utils.hpp"
 # include "../colors.hpp"
 
-class DiamondTrap : public ClapTrap, public FragTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
 	std::string	name;

@@ -6,127 +6,74 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:29:50 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/10 16:41:21 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 11:21:52 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
 
-void	ClapTrap::setName( const std::string& name )
+void	ClapTrap::setName( const std::string& argName )
 {
-	this->name.assign(name);
+	this->name.assign(argName);
 }
 
-void	ClapTrap::setHitPoints( const unsigned int hit_points)
+void	ClapTrap::setHitPoints( const unsigned int argHit_points)
 {
-	this->hit_points = hit_points;
-	this->max_hit_points = hit_points;
+	this->hit_points = argHit_points;
+	this->max_hit_points = argHit_points;
 }
 
-void	ClapTrap::setEnergyPoints( const unsigned int energy_points )
+void	ClapTrap::setEnergyPoints( const unsigned int argEnergy_points )
 {
-	this->energy_points = energy_points;
+	this->energy_points = argEnergy_points;
 }
 
-void ClapTrap::setAttackDamage( const unsigned int attack_damage )
+void ClapTrap::setAttackDamage( const unsigned int argAttack_damage )
 {
-	this->attack_damage = attack_damage;
+	this->attack_damage = argAttack_damage;
 }
 
 void	ClapTrap::attack ( const std::string& target )
 {
-	std::cout
-		<< YELLOW << "in attack: " << RESET;
-
 	if (this->energy_points)
 	{
 		if (this->hit_points)
 		{
-			std::cout
-				<< CYAN
-				<< "ClapTrap " << this->name
-				<< " attacks " << target
-				<< " causing " << this->attack_damage << " points of damage!";
+			attack_print(this->name, target, this->attack_damage);
 			this->energy_points -= 1;
 		}
 		else
-			std::cout
-				<< BOLDBLUE
-				<< "ClapTrap " << this->name
-				<< " has no hit points left!";
+			hpFail_print("attack", this->name);
 	}
 	else
-		std::cout
-			<< BOLDBLUE
-			<< "ClapTrap " << this->name
-			<< " has no energy points left!";
-
-	std::cout
-		<< RESET
-		<< std::endl;
+		epFail_print("attack", this->name);
 }
 
 void	ClapTrap::takeDamage( unsigned int amount )
 {
-	std::cout
-		<< YELLOW << "in takeDamage: " << RESET;
-
 	if (this->hit_points)
 	{
-		std::cout
-			<< CYAN
-			<< "ClapTrap " << this->name
-			<< " takes " << amount
-			<< " damage!";
-		this->hit_points -= (amount <= this->hit_points
-			? amount : this->hit_points);
+		takeDamage_print(this->name, amount);
+		this->hit_points
+			-= (amount <= this->hit_points ? amount : this->hit_points);
 	}
 	else
-	{
-		std::cout
-			<< BOLDBLUE
-			<< "ClapTrap " << this->name
-			<< " has no hit points left!";
-	}
-
-	std::cout
-		<< RESET
-		<< std::endl;
+		hpFail_print("takeDamage", this->name);
 }
 
 void	ClapTrap::beRepaired( unsigned int amount )
 {
-	std::cout
-		<< YELLOW << "in beRepaired: " << RESET;
-
 	if (this->energy_points)
 	{
-		if (this->hit_points + amount <= this->max_hit_points)
-		{
-			std::cout
-				<< CYAN
-				<< "ClapTrap " << this->name
-				<< " takes " << amount
-				<< " hit point back!";
-			this->hit_points += amount;
-			this->energy_points -= 1;
-		}
-		else
-			std::cout
-				<< BOLDBLUE
-				<< "ClapTrap " << this->name
-				<< " cannot take more than " << this->max_hit_points - this->hit_points
-				<< " points back!";
+		amount
+			= (this->hit_points + amount <= this->max_hit_points
+					? amount : this->max_hit_points - this->hit_points);
+		beRepaired_print(this->name, amount);
+		this->hit_points += amount;
+		this->energy_points -= 1;
 	}
 	else
-		std::cout
-			<< BOLDBLUE
-			<< "ClapTrap " << this->name
-			<< " has no energy points left!";
-
-	std::cout
-		<< RESET
-		<< std::endl;
+		epFail_print("beRepaired", this->name);
 }
 
 const std::string&	ClapTrap::getName( void )

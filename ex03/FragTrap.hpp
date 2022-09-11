@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 17:07:57 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/10 19:04:36 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 11:25:06 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "utils.hpp"
 # include "../colors.hpp"
 
-class FragTrap : virtual public ClapTrap//* We need virtual in order not to define to storages for Claptrap members
+class FragTrap : public virtual ClapTrap//* We need virtual in order not to define to storages for Claptrap members
 {
 private:
 	/* data */
