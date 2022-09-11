@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:29:50 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 11:21:52 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:07:44 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,21 @@ void	ClapTrap::beRepaired( unsigned int amount )
 const std::string&	ClapTrap::getName( void )
 {
 	return (this->name);
+}
+
+unsigned int	ClapTrap::getHp( void )
+{
+	return (this->hit_points);
+}
+
+unsigned int	ClapTrap::getMaxHp( void )
+{
+	return (this->max_hit_points);
+}
+
+unsigned int	ClapTrap::getEp( void )
+{
+	return (this->energy_points);
 }
 
 unsigned int	ClapTrap::getAttackDamage( void )

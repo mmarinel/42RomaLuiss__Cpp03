@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:17:47 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 11:22:08 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:05:59 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,10 @@ protected:
 	void				setAttackDamage( const unsigned int argAttack_damage );
 public:
 	const std::string&	getName( void );
-	unsigned int	getAttackDamage( void );
+	unsigned int		getHp( void );
+	unsigned int		getMaxHp( void );
+	unsigned int		getEp( void );
+	unsigned int		getAttackDamage( void );
 	void				takeDamage	( unsigned int amount );
 	void				beRepaired	( unsigned int amount );
 	void				attack		(const std::string& target);

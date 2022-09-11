@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 18:59:50 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 11:38:17 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:14:50 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,16 @@
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
-	std::string	name;
+	std::string		name;
+	unsigned int	hit_points;
+	unsigned int	energy_points;
+	unsigned int	attack_damage;
 public:
-	void				whoAmI	( void );
-	void				attack			( const std::string& name );
+	void				whoAmI			( void );
+	void				attack			( const std::string& argName );
 	const DiamondTrap&	operator =		( const DiamondTrap& to_copy );
 						DiamondTrap		( const DiamondTrap& to_copy );
-						DiamondTrap		( const std::string& name );
+						DiamondTrap		( const std::string& argName );
 						DiamondTrap		();
 						~DiamondTrap	();
 };
