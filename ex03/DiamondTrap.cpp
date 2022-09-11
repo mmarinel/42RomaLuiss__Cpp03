@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:00:12 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 17:00:05 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 20:00:23 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,14 @@ DiamondTrap::DiamondTrap( const DiamondTrap& to_copy )
 
 DiamondTrap::DiamondTrap( const std::string& argName ) : ScavTrap(argName), FragTrap(argName)
 {
+	FragTrap	f_trap;
+	ScavTrap	s_trap;
+
 	this->name.assign(argName);
 	ClapTrap::setName(argName + "_clap_name");
-	this->hit_points = FragTrap::getHp();
-	this->energy_points = ScavTrap::getEp();
-	this->attack_damage = FragTrap::getAttackDamage();
+	this->hit_points = f_trap.getHp();
+	this->energy_points = s_trap.getEp();
+	this->attack_damage = f_trap.getAttackDamage();
 }
 
 DiamondTrap::DiamondTrap()
