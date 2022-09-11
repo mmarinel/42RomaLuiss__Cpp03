@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 15:39:02 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 11:40:16 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 15:22:01 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ void	print_funcName(const char *funcName)
 	std::cout
 		<< YELLOW
 		<< "in " << funcName << ": "
-		<< std::endl
 		<< RESET;
 }
