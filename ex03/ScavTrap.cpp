@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:53:08 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/10 16:31:57 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:57:28 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,14 @@ const ScavTrap&	ScavTrap::operator = ( const ScavTrap& to_copy )
 ScavTrap::~ScavTrap()
 {
 	print_line("<<ScavTrap destroyed>>", BOLDRED);
+}
+
+bool	ScavTrap::get_mode( void ) const
+{
+	return (this->in_gate_keeping_mode);
+}
+
+void	ScavTrap::set_mode( const bool mode )
+{
+	this->in_gate_keeping_mode = mode;
 }

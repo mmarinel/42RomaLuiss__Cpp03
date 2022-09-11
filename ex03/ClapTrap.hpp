@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:17:47 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 16:05:59 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:52:40 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ protected:
 	void				setEnergyPoints( const unsigned int argEnergy_points );
 	void				setAttackDamage( const unsigned int argAttack_damage );
 public:
-	const std::string&	getName( void );
-	unsigned int		getHp( void );
-	unsigned int		getMaxHp( void );
-	unsigned int		getEp( void );
-	unsigned int		getAttackDamage( void );
+	const std::string&	getName( void ) const;
+	unsigned int		getHp( void ) const;
+	unsigned int		getMaxHp( void ) const;
+	unsigned int		getEp( void ) const;
+	unsigned int		getAttackDamage( void ) const;
 	void				takeDamage	( unsigned int amount );
 	void				beRepaired	( unsigned int amount );
 	void				attack		(const std::string& target);

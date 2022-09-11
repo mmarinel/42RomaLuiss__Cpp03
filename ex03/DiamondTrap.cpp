@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:00:12 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 16:25:31 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 17:00:05 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ void	DiamondTrap::attack( const std::string& argName )
 
 const DiamondTrap&	DiamondTrap::operator = ( const DiamondTrap& to_copy )
 {
+	ClapTrap::operator=(to_copy);
+	this->set_mode(to_copy.get_mode());
+
 	this->name.assign(to_copy.name);
 	ClapTrap::setName(to_copy.name + "_clap_name");
 	this->hit_points = to_copy.hit_points;
@@ -42,7 +45,7 @@ DiamondTrap::DiamondTrap( const DiamondTrap& to_copy )
 	*this = to_copy;
 }
 
-DiamondTrap::DiamondTrap( const std::string& argName )
+DiamondTrap::DiamondTrap( const std::string& argName ) : ScavTrap(argName), FragTrap(argName)
 {
 	this->name.assign(argName);
 	ClapTrap::setName(argName + "_clap_name");
@@ -63,4 +66,29 @@ DiamondTrap::DiamondTrap()
 DiamondTrap::~DiamondTrap()
 {
 	print_line("<<DiamondTrap destroyed>>", BOLDRED);
+}
+
+const std::string&	DiamondTrap::getName( void ) const
+{
+	return (this->name);
+}
+
+const std::string&	DiamondTrap::getClapName( void ) const
+{
+	return (ClapTrap::getName());
+}
+
+unsigned int	DiamondTrap::getHp( void ) const
+{
+	return (this->hit_points);
+}
+
+unsigned int	DiamondTrap::getEp( void ) const
+{
+	return (this->energy_points);
+}
+
+unsigned int	DiamondTrap::getAttackDamage( void ) const
+{
+	return (this->attack_damage);
 }

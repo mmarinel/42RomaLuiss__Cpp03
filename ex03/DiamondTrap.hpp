@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 18:59:50 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 16:14:50 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:50:55 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ private:
 public:
 	void				whoAmI			( void );
 	void				attack			( const std::string& argName );
+	const std::string&	getName			( void ) const;
+	const std::string&	getClapName		( void ) const;
+	unsigned int		getHp			( void ) const;
+	unsigned int		getEp			( void ) const;
+	unsigned int		getAttackDamage	( void ) const;
 	const DiamondTrap&	operator =		( const DiamondTrap& to_copy );
 						DiamondTrap		( const DiamondTrap& to_copy );
 						DiamondTrap		( const std::string& argName );
