@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:00:12 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 20:00:23 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/12 10:46:44 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,12 @@
 void	DiamondTrap::whoAmI( void )
 {
 	std::cout
+		<< BOLDWHITE
+		<< "WhoamI: "
 		<< this->name
 		<< "---"
 		<< ClapTrap::getName()
+		<< RESET
 		<< std::endl;
 }
 
@@ -28,8 +31,8 @@ void	DiamondTrap::attack( const std::string& argName )
 
 const DiamondTrap&	DiamondTrap::operator = ( const DiamondTrap& to_copy )
 {
-	ClapTrap::operator=(to_copy);
-	this->set_mode(to_copy.get_mode());
+	ScavTrap::operator=(to_copy);
+	FragTrap::operator=(to_copy);
 
 	this->name.assign(to_copy.name);
 	ClapTrap::setName(to_copy.name + "_clap_name");
@@ -59,11 +62,14 @@ DiamondTrap::DiamondTrap( const std::string& argName ) : ScavTrap(argName), Frag
 
 DiamondTrap::DiamondTrap()
 {
+	FragTrap	f_trap;
+	FragTrap	s_trap;
+
 	this->name.assign("nameless");
 	ClapTrap::setName("nameless_clap_name");
-	this->hit_points = FragTrap::getHp();
-	this->energy_points = ScavTrap::getEp();
-	this->attack_damage = FragTrap::getAttackDamage();
+	this->hit_points = f_trap.getHp();
+	this->energy_points = s_trap.getEp();
+	this->attack_damage = f_trap.getAttackDamage();
 }
 
 DiamondTrap::~DiamondTrap()
