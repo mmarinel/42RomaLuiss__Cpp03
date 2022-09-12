@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/11 11:18:14 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 11:39:51 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/12 11:31:24 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	takeDamage_print(const std::string clapName, const unsigned int amount)
 	std::cout
 		<< CYAN
 		<< "ClapTrap " << clapName
-		<< " takes " << amount << " damage!"
+		<< " takes " << amount << " points of damage!"
 		<< std::endl
 		<< RESET;
 }

@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:29:50 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 16:53:09 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/12 11:33:27 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ void	ClapTrap::takeDamage( unsigned int amount )
 {
 	if (this->hit_points)
 	{
+		amount = (amount <= this->hit_points ? amount : this->hit_points);
 		takeDamage_print(this->name, amount);
-		this->hit_points
-			-= (amount <= this->hit_points ? amount : this->hit_points);
+		this->hit_points -= amount;
 	}
 	else
 		hpFail_print("takeDamage", this->name);
