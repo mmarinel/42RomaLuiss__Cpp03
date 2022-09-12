@@ -6,7 +6,7 @@
 #    By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/16 17:11:58 by earendil          #+#    #+#              #
-#    Updated: 2022/09/12 11:25:10 by mmarinel         ###   ########.fr        #
+#    Updated: 2022/09/12 12:08:58 by mmarinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,17 +28,17 @@ BOLDMAGENTA	:= "\033[1m\033[35m"
 BOLDCYAN	:= "\033[1m\033[36m"
 BOLDWHITE	:= "\033[1m\033[37m"
 
-ex%: FORCE
-	@$(MAKE) -C $@ run
-
-FORCE:#https://www.gnu.org/software/make/manual/make.html#Force-Targets
-
 all:
 	@echo "Making all exercises\n"
 	@for DIR in $$(find . -print | grep "Makefile" | sed 's/Makefile//g' | grep ex); do \
 		make --no-print-directory -C $$DIR exercise; \
 	done;
 	@echo Exercises done!
+
+ex%: FORCE
+	@$(MAKE) -C $@ run
+
+FORCE:#https://www.gnu.org/software/make/manual/make.html#Force-Targets
 
 run:
 	@make --no-print-directory -si .RUN
