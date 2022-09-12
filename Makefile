@@ -6,7 +6,7 @@
 #    By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/16 17:11:58 by earendil          #+#    #+#              #
-#    Updated: 2022/08/20 10:57:47 by mmarinel         ###   ########.fr        #
+#    Updated: 2022/09/12 11:25:10 by mmarinel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,11 @@ BOLDBLUE	:= "\033[1m\033[34m"
 BOLDMAGENTA	:= "\033[1m\033[35m"
 BOLDCYAN	:= "\033[1m\033[36m"
 BOLDWHITE	:= "\033[1m\033[37m"
+
+ex%: FORCE
+	@$(MAKE) -C $@ run
+
+FORCE:#https://www.gnu.org/software/make/manual/make.html#Force-Targets
 
 all:
 	@echo "Making all exercises\n"
