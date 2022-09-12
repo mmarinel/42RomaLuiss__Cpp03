@@ -6,32 +6,11 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:29:50 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/12 11:33:27 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/12 12:34:11 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
-
-void	ClapTrap::setName( const std::string& argName )
-{
-	this->name.assign(argName);
-}
-
-void	ClapTrap::setHitPoints( const unsigned int argHit_points)
-{
-	this->hit_points = argHit_points;
-	this->max_hit_points = argHit_points;
-}
-
-void	ClapTrap::setEnergyPoints( const unsigned int argEnergy_points )
-{
-	this->energy_points = argEnergy_points;
-}
-
-void ClapTrap::setAttackDamage( const unsigned int argAttack_damage )
-{
-	this->attack_damage = argAttack_damage;
-}
 
 void	ClapTrap::attack ( const std::string& target )
 {

@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:53:08 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/12 10:47:44 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/12 12:38:46 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,12 @@ ScavTrap::ScavTrap ()
 {
 	print_line("ScavTrap- Default Constructor called", BOLDGREEN);
 
+	this->name.assign("nameless");
 	this->in_gate_keeping_mode = false;
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->hit_points = 100;
+	this->max_hit_points = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
 }
 
 ScavTrap::ScavTrap ( const std::string name ) : ClapTrap(name)
@@ -45,9 +47,11 @@ ScavTrap::ScavTrap ( const std::string name ) : ClapTrap(name)
 	print_line("ScavTrap- String Constructor called", BOLDGREEN);
 
 	this->in_gate_keeping_mode = false;
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(20);
+	this->name.assign(name);
+	this->hit_points = 100;
+	this->max_hit_points = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
 }
 
 ScavTrap::ScavTrap ( const ScavTrap& to_copy )
