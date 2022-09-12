@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 18:59:50 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 16:50:55 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/12 15:12:35 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
 	std::string		name;
-	unsigned int	hit_points;
-	unsigned int	energy_points;
-	unsigned int	attack_damage;
 public:
 	void				whoAmI			( void );
 	void				attack			( const std::string& argName );
