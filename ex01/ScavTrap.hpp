@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:52:59 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 11:24:51 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:38:24 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ private:
 public:
 	void			attack		( const std::string& target );
 	void			guardGate	( void );
+	void			set_mode	( const bool mode );
+	bool			get_mode	( void ) const;
 	const ScavTrap&	operator =	( const ScavTrap& to_copy );
 					ScavTrap	( const std::string name );
 					ScavTrap	( const ScavTrap& to_copy );

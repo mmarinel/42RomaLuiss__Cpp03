@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:29:50 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 11:21:52 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/11 16:53:09 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,27 @@ void	ClapTrap::beRepaired( unsigned int amount )
 		epFail_print("beRepaired", this->name);
 }
 
-const std::string&	ClapTrap::getName( void )
+const std::string&	ClapTrap::getName( void ) const
 {
 	return (this->name);
 }
 
-unsigned int	ClapTrap::getAttackDamage( void )
+unsigned int	ClapTrap::getHp( void ) const
+{
+	return (this->hit_points);
+}
+
+unsigned int	ClapTrap::getMaxHp( void ) const
+{
+	return (this->max_hit_points);
+}
+
+unsigned int	ClapTrap::getEp( void ) const
+{
+	return (this->energy_points);
+}
+
+unsigned int	ClapTrap::getAttackDamage( void ) const
 {
 	return (this->attack_damage);
 }
