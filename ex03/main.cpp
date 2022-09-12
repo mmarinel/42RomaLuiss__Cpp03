@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 14:44:14 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 17:01:48 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/12 10:57:53 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,29 +27,31 @@ int	main( void )
 	std::cout << std::endl;
 
 	showDiamondTrapInfo(russia);
-	// russia.beRepaired(usa.getAttackDamage());
-	// usa.attack(russia.getName());
-	// russia.takeDamage(usa.getAttackDamage());
-	// russia.beRepaired(usa.getAttackDamage());
-	// russia.beRepaired(100);
-	// usa.attack(russia.getName());
-	// russia.takeDamage(usa.getAttackDamage());
 
-	// russia.attack(usa.getName());
-	// usa.takeDamage(russia.getAttackDamage());
-	// russia.attack(usa.getName());
-	// usa.takeDamage(russia.getAttackDamage());
-	// russia.attack(usa.getName());
-	// usa.takeDamage(russia.getAttackDamage());
-	// russia.attack(usa.getName());
-	// usa.takeDamage(russia.getAttackDamage());
-	// russia.attack(usa.getName());
-	// usa.takeDamage(russia.getAttackDamage());
-	// usa.attack(russia.getName());
+	russia.whoAmI();
+	russia.beRepaired(usa.getAttackDamage());
+	usa.attack(russia.getName());
+	russia.takeDamage(usa.getAttackDamage());
+	russia.beRepaired(usa.getAttackDamage());
+	russia.beRepaired(100);
+	usa.attack(russia.getName());
+	russia.takeDamage(usa.getAttackDamage());
 
-	// std::cout << std::endl;
-	// russia.guardGate();
-	// std::cout << std::endl;
+	russia.attack(usa.getName());
+	usa.takeDamage(russia.getAttackDamage());
+	russia.attack(usa.getName());
+	usa.takeDamage(russia.getAttackDamage());
+	russia.attack(usa.getName());
+	usa.takeDamage(russia.getAttackDamage());
+	russia.attack(usa.getName());
+	usa.takeDamage(russia.getAttackDamage());
+	russia.attack(usa.getName());
+	usa.takeDamage(russia.getAttackDamage());
+	usa.attack(russia.getName());
+
+	std::cout << std::endl;
+	russia.guardGate();
+	std::cout << std::endl;
 	return 0;
 }
 

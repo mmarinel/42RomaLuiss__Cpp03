@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 19:00:12 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/12 10:46:44 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/12 11:02:40 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,15 @@ void	DiamondTrap::whoAmI( void )
 
 void	DiamondTrap::attack( const std::string& argName )
 {
+	print_line("DiamondTrap- in attack", YELLOW);
+
 	ScavTrap::attack(argName);
 }
 
 const DiamondTrap&	DiamondTrap::operator = ( const DiamondTrap& to_copy )
 {
+	print_line("DiamondTrap- Copy Assignment operator called", BOLDGREEN);
+
 	ScavTrap::operator=(to_copy);
 	FragTrap::operator=(to_copy);
 
@@ -45,11 +49,15 @@ const DiamondTrap&	DiamondTrap::operator = ( const DiamondTrap& to_copy )
 
 DiamondTrap::DiamondTrap( const DiamondTrap& to_copy )
 {
+	print_line("DiamondTrap- Copy Constructor called", BOLDGREEN);
+
 	*this = to_copy;
 }
 
 DiamondTrap::DiamondTrap( const std::string& argName ) : ScavTrap(argName), FragTrap(argName)
 {
+	print_line("DiamondTrap- String Constructor called", BOLDGREEN);
+
 	FragTrap	f_trap;
 	ScavTrap	s_trap;
 
@@ -62,6 +70,8 @@ DiamondTrap::DiamondTrap( const std::string& argName ) : ScavTrap(argName), Frag
 
 DiamondTrap::DiamondTrap()
 {
+	print_line("DiamondTrap- Default Constructor called", BOLDGREEN);
+
 	FragTrap	f_trap;
 	FragTrap	s_trap;
 
