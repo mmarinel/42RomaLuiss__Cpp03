@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 14:52:59 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 16:38:24 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/12 12:35:04 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "utils.hpp"
 # include "../colors.hpp"
 
-class ScavTrap : public virtual ClapTrap//* We need virtual in order not to define to storages for Claptrap members
+class ScavTrap : public virtual ClapTrap//* We need virtual in order not to define two storages for Claptrap members
 {
 private:
 	bool	in_gate_keeping_mode;

@@ -6,7 +6,7 @@
 /*   By: mmarinel <mmarinel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 11:17:47 by mmarinel          #+#    #+#             */
-/*   Updated: 2022/09/11 16:52:40 by mmarinel         ###   ########.fr       */
+/*   Updated: 2022/09/12 14:12:12 by mmarinel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@ private:
 	unsigned int		max_hit_points;
 	unsigned int		energy_points;
 	unsigned int		attack_damage;
-protected:
-	void				setName( const std::string& argName );
-	void				setHitPoints( const unsigned int argHit_points );
-	void				setEnergyPoints( const unsigned int argEnergy_points );
-	void				setAttackDamage( const unsigned int argAttack_damage );
 public:
 	const std::string&	getName( void ) const;
 	unsigned int		getHp( void ) const;
